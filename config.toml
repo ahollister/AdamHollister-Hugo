@@ -1,4 +1,4 @@
-baseurl = "http://adamhollister.com" # Hostname (and path) to the root.
+baseurl = "https://adamhollister.com" # Hostname (and path) to the root.
 title = "Adam Hollister" # Site title.
 theme = "adamhollister" # Set the theme.
 languagecode = "en" # The site’s language code used to generate RSS.
