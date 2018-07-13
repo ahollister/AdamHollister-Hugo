@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Adam Hollister">
+    
+    <meta name="keywords" content="blog,developer,personal">
+
+    <base href="http://adamhollister.com">
+    <title>
+  Relatively position elements in CSS · Adam Hollister
+</title>
+
+    <link rel="canonical" href="http://adamhollister.com/relatively-positioning-elements-in-css/">
+
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="http://adamhollister.com/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="http://adamhollister.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://adamhollister.com/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.43" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="http://adamhollister.com/">
+      Adam Hollister
+    </a>
+    <ul class="navigation-list  float-right ">
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Relatively position elements in CSS</h1>
+    </header>
+
+    
+
+<p>Positioning elements relative to their container is something that comes up often when writing CSS for a website. You might be trying to position a little triangle under hovered nav links, or place a badge in the top-right corner of your website, both of these are use-cases where you might need to position elements relative to other elements.</p>
+
+<p>The technique to achieve this is relatively simple. Let’s say I want to position an orange square inside a gray container.</p>
+
+<h3 id="first-the-html">First the HTML:</h3>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#fb660a;font-weight:bold">div</span> <span style="color:#ff0086;font-weight:bold">class</span>=<span style="color:#0086d2">&#34;container&#34;</span>&gt;
+  &lt;<span style="color:#fb660a;font-weight:bold">div</span> <span style="color:#ff0086;font-weight:bold">class</span>=<span style="color:#0086d2">&#34;orange-square&#34;</span>&gt;&lt;/<span style="color:#fb660a;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#fb660a;font-weight:bold">div</span>&gt;</code></pre></div>
+
+<h3 id="now-the-css">Now the CSS:</h3>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.container {
+  <span style="color:#fb660a;font-weight:bold">position</span>: <span style="color:#fb660a;font-weight:bold">relative</span>;
+  <span style="color:#fb660a;font-weight:bold">width</span>: <span style="color:#0086f7;font-weight:bold">200</span><span style="color:#cdcaa9;font-weight:bold">px</span>;
+  <span style="color:#fb660a;font-weight:bold">height</span>: <span style="color:#0086f7;font-weight:bold">200</span><span style="color:#cdcaa9;font-weight:bold">px</span>;
+  <span style="color:#fb660a;font-weight:bold">background</span>: <span style="color:#0086f7;font-weight:bold">#2d2d2d</span>;
+}
+.orange-square {
+  <span style="color:#fb660a;font-weight:bold">position</span>: <span style="color:#fb660a;font-weight:bold">absolute</span>;
+  <span style="color:#fb660a;font-weight:bold">width</span>: <span style="color:#0086f7;font-weight:bold">50</span><span style="color:#cdcaa9;font-weight:bold">px</span>;
+  <span style="color:#fb660a;font-weight:bold">height</span>: <span style="color:#0086f7;font-weight:bold">50</span><span style="color:#cdcaa9;font-weight:bold">px</span>;
+  <span style="color:#fb660a;font-weight:bold">background</span>: <span style="color:#fb660a;font-weight:bold">orange</span>;
+  <span style="color:#fb660a;font-weight:bold">top</span>: <span style="color:#0086f7;font-weight:bold">10</span><span style="color:#cdcaa9;font-weight:bold">px</span>;
+  <span style="color:#fb660a;font-weight:bold">left</span>: <span style="color:#0086f7;font-weight:bold">50</span><span style="color:#cdcaa9;font-weight:bold">px</span>;
+}</code></pre></div>
+
+<h3 id="the-result">The result:</h3>
+
+<iframe height='359' scrolling='no' title='Positioning elements 1' src='//codepen.io/aaahollister/embed/YqQLLz/?height=359&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/aaahollister/pen/YqQLLz/'>Positioning elements 1</a> by Adam Hollister (<a href='https://codepen.io/aaahollister'>@aaahollister</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+<p>So you can see above that I’ve given the container position: relative, which sets the positioning context of the orange-square. Now we can take the orange square and give it position: absolute. Normally this would allow you to position this element relative to the body tag, but now it is being positioned relative to the container instead.</p>
+
+<p>In the example above I’ve positioned the orange square ten pixels from the top and 50 from the left of the container, but you can also use percentages for more responsive positioning.</p>
+
+<h3 id="try-resizing-your-browser-on-this-example">Try resizing your browser on this example:</h3>
+
+<iframe height='265' scrolling='no' title='Positioning elements 2' src='//codepen.io/aaahollister/embed/pywVYV/?height=265&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/aaahollister/pen/pywVYV/'>Positioning elements 2</a> by Adam Hollister (<a href='https://codepen.io/aaahollister'>@aaahollister</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+<p>We can also use percentage values for the width of the orange square, and the width will be calculated as a percentage of the containers width.</p>
+
+<iframe height='265' scrolling='no' title='Positioning elements 4' src='//codepen.io/aaahollister/embed/vGZjqG/?height=265&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/aaahollister/pen/vGZjqG/'>Positioning elements 4</a> by Adam Hollister (<a href='https://codepen.io/aaahollister'>@aaahollister</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+<h2 id="using-this-technique-to-perfectly-center-elements">Using this technique to perfectly center elements</h2>
+
+<p>Now that we can position our orange square relative to the container, how can we get it to sit perfectly in the middle, regardless of the size or shape of the container?</p>
+
+<p>You might think the answer is to set the left and top properties of the orange box using percentage values like this:</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.orange-square {
+  <span style="color:#fb660a;font-weight:bold">top</span>: <span style="color:#0086f7;font-weight:bold">50</span><span style="color:#cdcaa9;font-weight:bold">%</span>;
+  <span style="color:#fb660a;font-weight:bold">left</span>: <span style="color:#0086f7;font-weight:bold">50</span><span style="color:#cdcaa9;font-weight:bold">%</span>;
+}</code></pre></div>
+
+<p>However the CSS above results in this:</p>
+
+<iframe height='265' scrolling='no' title='Positioning elements 3' src='//codepen.io/aaahollister/embed/vGZjwL/?height=265&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/aaahollister/pen/vGZjwL/'>Positioning elements 3</a> by Adam Hollister (<a href='https://codepen.io/aaahollister'>@aaahollister</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+<p>This is because when we position the orange square, the co-ordinates that are being assigned relate to the top left corner of the square, not the center.</p>
+
+<p>We can overcome this problem by using CSS transforms to pull the box left and up by 50% of it’s height and width.</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.orange-square {
+  <span style="color:#fb660a;font-weight:bold">top</span>: <span style="color:#0086f7;font-weight:bold">50</span><span style="color:#cdcaa9;font-weight:bold">%</span>;
+  <span style="color:#fb660a;font-weight:bold">left</span>: <span style="color:#0086f7;font-weight:bold">50</span><span style="color:#cdcaa9;font-weight:bold">%</span>;
+  <span style="color:#fb660a;font-weight:bold">transform</span>: translate(<span style="color:#0086f7;font-weight:bold">-50</span><span style="color:#cdcaa9;font-weight:bold">%</span>, <span style="color:#0086f7;font-weight:bold">-50</span><span style="color:#cdcaa9;font-weight:bold">%</span>);
+}</code></pre></div>
+
+<p>Here we are using a CSS transform to translate the position of the orange square 50% of it’s width left and up (in that order) with translate(-50%, -50%).</p>
+
+<iframe height='265' scrolling='no' title='Positioning elements 5' src='//codepen.io/aaahollister/embed/BKZVyd/?height=265&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/aaahollister/pen/BKZVyd/'>Positioning elements 5</a> by Adam Hollister (<a href='https://codepen.io/aaahollister'>@aaahollister</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+<hr />
+
+<p>So now we can position an element relative to it’s container and place it where we want using position: absolute and the top, bottom, left and right properties. We can use percentage values instead of pixels for stretchier elements and more responsive positioning. Finally we’ve also learned how to use this technique combined with CSS transforms to perfectly and responsively center elements inside their container.</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+     
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>
