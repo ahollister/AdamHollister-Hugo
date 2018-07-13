@@ -31,18 +31,31 @@ hr {
   max-width: 70.0rem;
 }
 
-.navigation-title {
-  position: absolute;
-  left: 2rem;
+a.navigation-title {
+  display: block;
+  width: 100%;
+  font-size: 1.4rem;
+}
+a.navigation-title:after {
+  content: '';
 }
 
-@media only screen and (max-device-width: 480px) and (min-device-width: 320px) {
+.list ul li span {
+  width: auto;
+}
+.list ul li a {
+  display: inline-block;
+}
+
+@media only screen and (min-width: 768px) {
   a.navigation-title {
-    display: block;
-    width: 100%;
-    font-size: 1.4rem;
+    position: absolute;
+    left: 2rem;
   }
-  a.navigation-title:after {
-    content: '';
+  .list ul li span {
+    width: 20rem;
+  }
+  .list ul li a {
+    display: inline;
   }
 }
