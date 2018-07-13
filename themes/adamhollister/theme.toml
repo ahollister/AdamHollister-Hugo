@@ -1,0 +1,26 @@
+name = "Adam Hollister"
+license = "MIT"
+licenselink = "https://github.com/ahollister/blog-basic/blob/master/LICENSE"
+description = "A super simple and clean blog theme - forked from the Coder Hugo theme"
+homepage = "https://github.com/ahollister/blog-basic/"
+tags = [
+  "blog",
+  "minimal",
+  "minimalist",
+  "responsive",
+  "simple",
+  "clean",
+  "personal"
+]
+features = [
+  "analytics",
+  "favicon",
+  "pagination",
+  "single-column",
+  "syntax-highlighting"
+]
+min_version = "0.32"
+
+[author]
+  name = "Adam Hollister"
+  homepage = "https://adamhollister.com"
