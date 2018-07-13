@@ -35,3 +35,14 @@ hr {
   position: absolute;
   left: 2rem;
 }
+
+@media only screen and (max-device-width: 480px) and (min-device-width: 320px) {
+  a.navigation-title {
+    display: block;
+    width: 100%;
+    font-size: 1.4rem;
+  }
+  a.navigation-title:after {
+    content: '';
+  }
+}
