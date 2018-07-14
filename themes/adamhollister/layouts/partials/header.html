@@ -3,7 +3,7 @@
     <a class="navigation-title" href="{{ print "/" | absLangURL }}">
       {{ .Site.Title }}
     </a>
-    <ul class="navigation-list {{ if $.Site.Params.rtl }} float-left {{ else }} float-right {{ end }}">
+    <!-- <ul class="navigation-list {{ if $.Site.Params.rtl }} float-left {{ else }} float-right {{ end }}">
       {{ with .Site.Menus.main}}
         {{ range sort . }}
           <li class="navigation-item">
@@ -29,6 +29,6 @@
           {{ end }}
         {{ end }}
       {{ end }}
-    </ul>
+    </ul> -->
   </section>
 </nav>

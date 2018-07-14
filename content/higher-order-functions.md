@@ -1,5 +1,5 @@
 +++
-title = "Higher order functions in JavaScript"
+title = "Map - an introduction to higher order functions in JavaScript"
 date = "2018-07-14"
 +++
 
