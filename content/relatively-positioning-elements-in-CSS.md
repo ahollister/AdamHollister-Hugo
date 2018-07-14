@@ -5,7 +5,7 @@ date = "2016-03-27"
 
 Positioning elements relative to their container is something that comes up often when writing CSS for a website. You might be trying to position a little triangle under hovered nav links, or place a badge in the top-right corner of your website, both of these are use-cases where you might need to position elements relative to other elements.
 
-The technique to achieve this is relatively simple. Let’s say I want to position an orange square inside a gray container.
+The technique to achieve this is _relatively_ simple. Let’s say I want to position an orange square inside a gray container.
 
 ### First the HTML:
 {{< highlight html >}}
@@ -71,7 +71,7 @@ However the CSS above results in this:
 
 This is because when we position the orange square, the co-ordinates that are being assigned relate to the top left corner of the square, not the center.
 
-We can overcome this problem by using CSS transforms to pull the box left and up by 50% of it’s height and width.
+We can overcome this problem by using CSS transforms to pull the box left and up by 50% of its height and width.
 
 {{< highlight css >}}
 .orange-square {
@@ -81,11 +81,11 @@ We can overcome this problem by using CSS transforms to pull the box left and up
 }
 {{< / highlight >}}
 
-Here we are using a CSS transform to translate the position of the orange square 50% of it’s width left and up (in that order) with translate(-50%, -50%).
+Here we are using a CSS transform to translate the position of the orange square 50% of its width left and up (in that order) with translate(-50%, -50%).
 
 <iframe height='265' scrolling='no' title='Positioning elements 5' src='//codepen.io/aaahollister/embed/BKZVyd/?height=265&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/aaahollister/pen/BKZVyd/'>Positioning elements 5</a> by Adam Hollister (<a href='https://codepen.io/aaahollister'>@aaahollister</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ---
 
-So now we can position an element relative to it’s container and place it where we want using position: absolute and the top, bottom, left and right properties. We can use percentage values instead of pixels for stretchier elements and more responsive positioning. Finally we’ve also learned how to use this technique combined with CSS transforms to perfectly and responsively center elements inside their container.
+So now we can position an element relative to its container and place it where we want using position: absolute and the top, bottom, left and right properties. We can use percentage values instead of pixels for stretchier elements and more responsive positioning. Finally we’ve also learned how to use this technique combined with CSS transforms to perfectly and responsively center elements inside their container.
