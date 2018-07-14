@@ -54,9 +54,6 @@ a.navigation-title:after {
 }
 
 @media only screen and (min-width: 768px) {
-  .list ul li {
-    margin-bottom: 0;
-  }
   .list ul li span {
     width: 20rem;
     text-align: right;
@@ -64,7 +61,7 @@ a.navigation-title:after {
   }
   .list ul li a {
     display: inline-block;
-    max-width: calc(100% - 31rem);
+    max-width: calc(100% - 23rem);
     vertical-align: top;
   }
 }
