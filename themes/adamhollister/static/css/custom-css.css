@@ -27,6 +27,10 @@ hr {
   margin: 4em;
 }
 
+blockquote {
+  margin: 3em 0;
+}
+
 .container {
   max-width: 70.0rem;
 }
