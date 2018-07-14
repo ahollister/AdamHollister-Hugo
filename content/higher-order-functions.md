@@ -1,6 +1,7 @@
 +++
 title = "Map - an introduction to higher order functions in JavaScript"
 date = "2018-07-14"
+draft = true
 +++
 
 Higher order functions are functions that take other functions as parameters, and can be a highly useful type of abstraction.
