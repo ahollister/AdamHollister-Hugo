@@ -1,6 +1,6 @@
 +++
 title = "JavaScript Promises - Basics"
-date = "2018-03-16"
+date = "2018-07-18"
 draft = false
 +++
 
