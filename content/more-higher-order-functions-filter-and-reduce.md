@@ -1,6 +1,6 @@
 +++
 title = "More higher order functions - filter and reduce"
-date = "2018-03-14"
+date = "2018-07-14"
 draft = false
 +++
 

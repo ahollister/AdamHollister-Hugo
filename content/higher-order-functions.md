@@ -1,6 +1,6 @@
 +++
 title = "Map - an introduction to higher order functions in JavaScript"
-date = "2018-03-10"
+date = "2018-07-10"
 draft = false
 +++
 
